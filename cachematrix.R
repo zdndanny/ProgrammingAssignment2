@@ -1,9 +1,39 @@
-## Put comments here that give an overall description of what your
-## functions do
 ## Matrix inversion is usually a costly computation and their may be some 
 ## benefit to caching the inverse of a matrix rather than compute it repeatedly
 ## This file contains two functions that cache the inverse of a matrix.
 
+## Examples:
+## 
+## > set.seed(1)
+## > x <- makeCacheMatrix(matrix(rnorm(4),2,2))
+## 
+## > cacheSolve(x)
+## [,1]       [,2]
+## [1,] -1.885871 -0.9878433
+## [2,]  0.217095  0.7405661
+## 
+## if x is not changed, next call will used cached result
+## > cacheSolve(x)
+## getting cached data
+## [,1]       [,2]
+## [1,] -1.885871 -0.9878433
+## [2,]  0.217095  0.7405661
+## 
+## change x now
+## > x <- makeCacheMatrix(matrix(runif(9),3,3))
+## first call will resolv the matrix 
+## > cacheSolve(x)
+## [,1]      [,2]      [,3]
+## [1,]  2.7566159  1.543352 -4.027603
+## [2,]  0.5312684  2.674826 -2.425037
+## [3,] -1.0755784 -1.874676  3.847517
+## next call used cached result
+## > cacheSolve(x)
+## getting cached data
+## [,1]      [,2]      [,3]
+## [1,]  2.7566159  1.543352 -4.027603
+## [2,]  0.5312684  2.674826 -2.425037
+## [3,] -1.0755784 -1.874676  3.847517
 
 ## makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
 
