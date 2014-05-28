@@ -43,7 +43,7 @@ makeCacheMatrix <- function(x = matrix()) {
         ## the <<- operator which can be used to assign a value to an object in an 
         ## environment that is different from the current environment. 
         x <<- y
-        m <<- NULL
+        inv <<- NULL
     }
     get <- function() x
     setinverse <- function(inverse) inv <<- inverse
