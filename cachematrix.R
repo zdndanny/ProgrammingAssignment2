@@ -35,13 +35,17 @@
 ## [2,]  0.5312684  2.674826 -2.425037
 ## [3,] -1.0755784 -1.874676  3.847517
 
-## makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
+## makeCacheMatrix: 
+## This function creates a special "matrix" object 
+## that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
     set <- function(y) {
-        ## the <<- operator which can be used to assign a value to an object in an 
-        ## environment that is different from the current environment. 
+        ## the <<- operator is used to assign a value to objects
+        ## in an environment that is different from the current environment. 
+        ## x is from the environment calling makeCacheMatrix
+        ## inv is the environment 
         x <<- y
         inv <<- NULL
     }
@@ -51,7 +55,7 @@ makeCacheMatrix <- function(x = matrix()) {
     list(set = set, 
          get = get,
          setinverse = setinverse, 
-         getinverse=getinverse)
+         getinverse = getinverse)
 }
 
 
