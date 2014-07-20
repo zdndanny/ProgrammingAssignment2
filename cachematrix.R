@@ -12,7 +12,7 @@
 ## [1,] -1.885871 -0.9878433
 ## [2,]  0.217095  0.7405661
 ## 
-## if x is not changed, next call will used cached result
+## if x is not changed, next call will get cached result
 ## > cacheSolve(x)
 ## getting cached data
 ## [,1]       [,2]
@@ -27,7 +27,7 @@
 ## [1,]  2.7566159  1.543352 -4.027603
 ## [2,]  0.5312684  2.674826 -2.425037
 ## [3,] -1.0755784 -1.874676  3.847517
-## next call used cached result
+## next call get cached result
 ## > cacheSolve(x)
 ## getting cached data
 ## [,1]      [,2]      [,3]
